@@ -1,0 +1,52 @@
+JDBC
+1. Type 4 = Thin Driver
+
+2. How many transaction isolation levels provide the JDBC through the Connection interface?===>4
+	TRANSACTION_READ_UNCOMMITTED	Dirty reads, non-repeatable reads, and phantom reads can occur.
+	TRANSACTION_READ_COMMITTED	Dirty reads are prevented; non-repeatable reads and phantom reads can occur.
+	TRANSACTION_REPEATABLE_READ	Dirty reads and non-repeatable reads are prevented; phantom reads can occur.
+	TRANSACTION_SERIALIZABLE	Dirty reads, non-repeatable reads, and phantom reads are prevented.
+
+3. method is static and synchronized in JDBC API?
+	Ans:- getConnection()
+4. 4 ways to load a database driver in JDBC:
+	1. By creating an object of the Driver For example:
+		sun.jdbc.odbc.JdbcOdbcDriver obj = new sun.jdbc.odbc.JdbcOdbcDriver();
+	2. By sending the driver class object to the registerDriver() method of the DriverManager class. For example:
+		DriverManager.registerDriver(new sun.jdbc.odbc.JdbcOdbcDriver());
+	3. By sending the driver class name directly to the forName() For example:
+		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+	4. By using the getProperty() method of the System class.
+		String dname = System.getProperty("driver");
+		Class.forName(dname);
+
+5. Which Interface provides the commit() and rollback() methods
+	Ans: Connection Interface
+6. Which of the following driver converts the JDBC calls into database-specific calls?	
+	Native API-partly Java Driver (Type 2)
+
+7. data type is used to store files in the database table?
+	Ans: CLOB(Character Large OBject) .
+
+8. JDBC provides only two types of ResultSets:=> Forward and Scrollable ResultSet.
+
+9. statement to connect Oracle database using the thin driver.
+
+	DriverManager.getConnection("jdbc::thin@localhost:1521:oracle", "scott", "tiger");
+
+10. Data Source Name (DSN‏) is a name given to the database to identify it in the Java program. The DSN is linked with the actual location of the database.
+
+11. here are three types of ResultSet object:
+
+	TYPE_FORWARD_ONLY: This is the default type and the cursor can only move forward in the result set.
+	TYPE_SCROLL_INSENSITIVE: The cursor can move forward and backward, and the result set is not sensitive to changes made by others to the database after the result set was created.
+	TYPE_SCROLL_SENSITIVE: The cursor can move forward and backward, and the result set is sensitive to changes made by others to the database after the result set was created.
+
+
+12.JDBC Net pure Java driver (Type 4) is the fastest driver because it converts the JDBC calls into vendor-specific protocol calls and it directly interacts with the database.
+
+13. Type 1 driver is also known as the JDBC-ODBC bridge driver. 
+14. JDBC driver can be used in servlet and applet both?
+	Type 3 and Type 4.
+
+15.
